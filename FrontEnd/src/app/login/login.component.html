@@ -3,16 +3,16 @@
         <form action="">
             <h1>Login</h1>
             <div class="inputbox">
-                <input type="email" name="email" required >
+                <input [(ngModel)]="user.email" type="email" name="email" required >
                 <label for="email">Email </label>
                 <i class="fa-solid fa-envelope"></i>
             </div>
             <div class="inputbox">
-                <input type="password" name="password" required>
+                <input [(ngModel)]="user.password" type="password" name="password" required>
                 <label for="password">Password</label>
                 <i class="fa-solid fa-lock"></i>
             </div>
-            <button type="submit">Log in</button>
+            <button type="submit" (click)="login()">Log in</button>
             <div class="register">
                 <p>Don't have an account?</p>
                 <a href="#">Register now</a>
