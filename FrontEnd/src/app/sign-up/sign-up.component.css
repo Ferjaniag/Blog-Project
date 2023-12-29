@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+.body-container {
+    background: linear-gradient( to bottom, #7F29FF, #CAA2FF, #E8D7FF, #F5EEFF);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section {
+    background-color: #fff;
+    width: 400px;
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+form {
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.inputbox {
+    position: relative;
+    margin-bottom: 50px;
+}
+
+i {
+  position: relative;
+  right: 20px;
+  color: #333;
+}
+
+input {
+    width: 90%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    outline: none;
+}
+
+label {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: #777;
+    pointer-events: none;
+    transition: 0.3s;
+}
+h4{
+    position: absolute;
+    top: 0%;
+    bottom: 20%;
+   
+    left: 15px;
+    transform: translateY(-50%);
+    color: #777;
+    pointer-events: none;
+    transition: 0.3s;
+}
+input:focus + label,
+input:valid + label {
+    transform: translateY(-80%);
+    font-size: 14px;
+    color: #7F29FF;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #CAA2FF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #D1AEFF;
+}
+
+.register {
+    text-align: center;
+    margin-top: 20px;
+}
+
+a {
+    color: #CAA2FF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #D1AEFF;
+}
