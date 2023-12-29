@@ -7,10 +7,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 
 const routes: Routes = [
 
-  {
-    component:LoginComponent,
-    path: 'login',
-  },
+  
   {
     component:SignUpComponent,
     path: 'signup',
@@ -18,6 +15,10 @@ const routes: Routes = [
   {
     component:HomeComponent,
     path: 'home',
+  },
+  {
+    component:LoginComponent,
+    path: 'login',
   },
   {
     component:LandingPageComponent,
