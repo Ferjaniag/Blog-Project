@@ -8,7 +8,7 @@ const multer=require('multer') ;
 let filename=''
 
 const myStorage=multer.diskStorage({
-    destination:'../uploads',
+    destination:'./uploads',
     filename :(req,file,redirect)=> {
         let date=Date.now() ;
         let fl=date+'.'+file.mimetype.split('/')[1] ;
@@ -19,7 +19,7 @@ const myStorage=multer.diskStorage({
 
 const upload=multer({storage:myStorage}) 
 
-router.post('/tweet/create',upload.any('image'),(req,res)=>{
+router.post('/tweet/create',upload.any('tweetAttachement'),(req,res)=>{
 
     const newTweet= new Tweet() ;
 
