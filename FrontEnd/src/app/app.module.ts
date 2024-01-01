@@ -12,6 +12,8 @@ import { HttpClient } from '@angular/common/http';
 import { ProfileComponent } from './profile/profile.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './services/auth.service';
+import { MyPostsComponent } from './my-posts/my-posts.component';
+import { LikedPostsComponent } from './liked-posts/liked-posts.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { AuthService } from './services/auth.service';
     LoginComponent,
     SignUpComponent,
     HomeComponent,
-    ProfileComponent
+    ProfileComponent,
+    MyPostsComponent,
+    LikedPostsComponent
   ],
   imports: [
     BrowserModule,

@@ -4,6 +4,9 @@ import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { HomeComponent } from './home/home.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { ProfileComponent } from './profile/profile.component';
+import { LikedPostsComponent } from './liked-posts/liked-posts.component';
+import { MyPostsComponent } from './my-posts/my-posts.component';
 
 const routes: Routes = [
 
@@ -24,6 +27,19 @@ const routes: Routes = [
     component:LandingPageComponent,
     path: '',
   },
+  {
+    component:ProfileComponent,
+    path: 'profile',
+  },
+  {
+    component:LikedPostsComponent,
+    path: 'likedposts',
+  },
+  {
+    component:MyPostsComponent,
+    path: 'myposts',
+  },
+
 ];
 
 @NgModule({
