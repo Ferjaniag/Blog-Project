@@ -82,7 +82,23 @@ const deleteTweet = (async (req,res)=>{
     
 })
 
+const getAllTweetes = (async (req,res)=>{
+
+  try {
+    const result = await Tweet.find();
+    res.status(200).send({ success: true, Tweets: result });
+  } catch (error) {
+    res.status(500).send({sucess:"false",message:error})
+  }
+ 
+ /*
+  await Tweet.find().then(result=> {
+    res.status(200).send({sucess:"true",Tweets:result})
+  }) .catch(res.status(500).send({sucess:"false",message:"No tweets were found. "}) ) 
+}) 
+*/
+
+})
 
 
-
-module.exports = {deleteTweet,addComment,updateTweet,addTweet}
+module.exports = {deleteTweet,addComment,updateTweet,addTweet,getAllTweetes}

@@ -32,5 +32,16 @@ export class AuthService {
   }
 
 
+  getUserDataFromToken(){
+    let token=localStorage.getItem('token') ;
+    if (token) {
+     // console.log(" token: " + token) ;
+      let data=JSON.parse(atob(token.split('.')[1]))
+   //   console.log("data from token: " + data) ;
+      return data ;
+    }
+  }
+
+
 
 }

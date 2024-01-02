@@ -43,11 +43,12 @@ then(user => {
   } else {
 
     let payload= {
-      _id:req.body._id ,
-      email:req.body.email,
-      bio:req.body.bio,
-      profile_picture:req.body.profile_picture,
-      fullName:req.body.firstName+' '+req.body.lastName
+      _id:user._id, 
+      email:user.email,
+      bio:user.bio,
+      profile_picture:user.profile_picture,
+      firstName:user.firstName,
+      lastName:user.lastName
 
     }
 
@@ -72,6 +73,13 @@ const updateUserProfil = ((req, res) => {
         .then(result => res.status(200).json({ success:"true",message:"Successfully updated!" }))
         .catch((error) => res.status(404).json({msg: 'User not found' }))
 })
+
+// Find User By ID 
+
+const findUserByID =( (req, res) => { 
+  
+})
+
 
 
 

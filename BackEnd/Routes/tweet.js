@@ -25,6 +25,7 @@ router.post('/tweet/create',upload.any('tweetAttachement'),(req,res)=>{
 
     newTweet.userID=req.body.userID;
     newTweet.tweetContent=req.body.tweetContent ;
+    newTweet.tags=req.body.tags
     newTweet.tweetAttachment=filename ;
 
     newTweet.save().then(
@@ -36,6 +37,9 @@ router.post('/tweet/create',upload.any('tweetAttachement'),(req,res)=>{
 })
 
 router.post('/tweet/addTweetNF',TweetController.addTweet) ;
+router.get('/tweet/getAllTweets',TweetController.getAllTweetes);
+router.delete('/tweet/delete/:id',TweetController.deleteTweet)
+router.put('/tweet/updateTweet/:id',TweetController.updateTweet)
 
 
 module.exports=router 

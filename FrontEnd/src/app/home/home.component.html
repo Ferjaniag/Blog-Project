@@ -8,14 +8,14 @@
             <a routerLink="/likedposts"><i class="fas fa-thumbs-up"></i> Liked Posts</a>
         </div>
         <div class="sidebar-section" style="margin-top: 10px;">
-            <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            <a href="#"><i class="fas fa-sign-out-alt" (click)="logOut()"></i> Logout</a>
             <!-- <a href="#"><i class="fas fa-cog"></i> Settings</a> -->
         </div>
     </div>
     <div class="main-content">
         <div class="top-bar">
             <div class="profile-info">
-                <h3> Welcome Jiu</h3>
+                <h3> Welcome {{fullNameUser}}</h3>
             </div>
             <div class="notifications">
                 <i class="fas fa-bell" style="color: #6F42C1;"></i>
@@ -26,21 +26,23 @@
 
         </div>
         <div class="featured-posts">
-            <div class="post-box">
-                <textarea placeholder="What's happening?"></textarea>
-                <button class="post-button" >Post</button>    
+            <div class="post-box" >
+                <textarea  placeholder="What's happening?"  [(ngModel)]="tweetContent" (input)="extractTags()"></textarea>
+                <button (click)="addTweet()" class="post-button" >Post</button>    
             </div>
-            <div class="thread-post">
+            <div class="thread-post"  *ngFor="let tweet of tweets">
                 <div class="user-info">
                     <img src="assets/av1.png" alt="Profile Picture" class="profile-picture">
                 <div class="username">Jiu Kim</div>
                 </div>
                 <div class="post-content">
-                    abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQ
-                    ahjsbzahdvhgevgehzvfgzvgfvzgr
+                    {{ tweet.tweetContent }}
+                  <div class="tags" style="color: rgb(54, 116, 202);" *ngFor="let tag of tweet.tags">
+                    #{{ tag }}
+                  </div>
                 </div>
                 <div class="actions">
-                    <button class="like-button">Like</button>
+                    <button class="like-button">Like  <span> 1 </span></button> 
                     <button class="comment-button">Comment</button>
                 </div>
         </div>
