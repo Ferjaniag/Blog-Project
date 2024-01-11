@@ -24,6 +24,8 @@ export class AuthService {
 
   isLoggedIn() {
     let token=localStorage.getItem('token')  ; 
+
+    console.log("ena f service auth",token)
     if (token){
       return true ;
     } else {

@@ -7,6 +7,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LikedPostsComponent } from './liked-posts/liked-posts.component';
 import { MyPostsComponent } from './my-posts/my-posts.component';
+import { AuthGuard } from './services/auth.guard';
 
 const routes: Routes = [
 
@@ -17,6 +18,7 @@ const routes: Routes = [
   },
   {
     component:HomeComponent,
+   // canActivate : [AuthGuard] , 
     path: 'home',
   },
   {
@@ -29,14 +31,17 @@ const routes: Routes = [
   },
   {
     component:ProfileComponent,
+   // canActivate : [AuthGuard] , 
     path: 'profile',
   },
   {
     component:LikedPostsComponent,
+   // canActivate : [AuthGuard] , 
     path: 'likedposts',
   },
   {
     component:MyPostsComponent,
+   // canActivate : [AuthGuard] , 
     path: 'myposts',
   },
 
