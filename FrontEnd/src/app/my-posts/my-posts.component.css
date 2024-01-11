@@ -96,7 +96,7 @@
 
 
 .thread-post {
-    width: 400px;
+    width: 500px;
     margin: 20px auto;
     padding: 15px;
     border: 1px solid #ccc;
@@ -108,8 +108,17 @@
   .user-info {
     display: flex;
     align-items: center;
+    justify-content: space-between;
   }
-  
+
+  .top-left {
+    display: flex;
+    align-items: center;
+    
+}
+.top-right {
+  text-align: right;
+}
   .profile-picture {
     width: 40px;
     height: 40px;
@@ -182,3 +191,32 @@
   .post-button:hover {
     background-color: #f1c584;
   }
+
+  .post-header {
+    gap:15px;
+   display: flex;
+   flex-direction: row;
+   
+}
+.action-button{
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+
+}
+
+#update{
+  color: #6930c3;
+} 
+#delete{
+  color: #ef233c;
+}
+
+#delete:hover{
+  color: #f75e6f;
+}
+
+#update:hover{
+  color: #7d35f1;
+}
