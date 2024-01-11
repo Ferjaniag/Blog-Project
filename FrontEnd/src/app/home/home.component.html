@@ -30,7 +30,13 @@
                 <textarea  placeholder="What's happening?"  [(ngModel)]="tweetContent" (input)="extractTags()"></textarea>
                 <button (click)="addTweet()" class="post-button" >Post</button>    
             </div>
+
+
             <div class="thread-post"  *ngFor="let tweet of tweets">
+                <div class="post-header">
+                    <button class="action-button" ><i class="fas fa-pencil-alt"></i></button>
+                    <button class="action-button" ><i class="fas fa-trash"></i></button>
+                  </div>
                 <div class="user-info">
                     <img src="assets/av1.png" alt="Profile Picture" class="profile-picture">
                 <div class="username">Jiu Kim</div>
@@ -45,7 +51,8 @@
                     <button class="like-button">Like  <span> 1 </span></button> 
                     <button class="comment-button">Comment</button>
                 </div>
-        </div>
+
+           
             
         </div>
     </div>

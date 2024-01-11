@@ -7,6 +7,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LikedPostsComponent } from './liked-posts/liked-posts.component';
 import { MyPostsComponent } from './my-posts/my-posts.component';
+import { TestComponent } from './test/test.component';
 
 const routes: Routes = [
 
@@ -38,6 +39,10 @@ const routes: Routes = [
   {
     component:MyPostsComponent,
     path: 'myposts',
+  },
+  {
+    component:TestComponent,
+    path: 'test',
   },
 
 ];

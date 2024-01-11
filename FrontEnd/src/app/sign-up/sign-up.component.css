@@ -28,7 +28,7 @@ h1 {
 
 .inputbox {
     position: relative;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 i {
@@ -101,4 +101,8 @@ a {
 
 a:hover {
     color: #D1AEFF;
+}
+
+#inputpic{
+    margin-top: 15%;
 }
