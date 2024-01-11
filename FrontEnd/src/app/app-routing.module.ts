@@ -7,7 +7,11 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LikedPostsComponent } from './liked-posts/liked-posts.component';
 import { MyPostsComponent } from './my-posts/my-posts.component';
+<<<<<<< HEAD
 import { TestComponent } from './test/test.component';
+=======
+import { AuthGuard } from './services/auth.guard';
+>>>>>>> 761481da19da56d25558a72c1a91bc49e7436af5
 
 const routes: Routes = [
 
@@ -18,6 +22,7 @@ const routes: Routes = [
   },
   {
     component:HomeComponent,
+   // canActivate : [AuthGuard] , 
     path: 'home',
   },
   {
@@ -30,14 +35,17 @@ const routes: Routes = [
   },
   {
     component:ProfileComponent,
+   // canActivate : [AuthGuard] , 
     path: 'profile',
   },
   {
     component:LikedPostsComponent,
+   // canActivate : [AuthGuard] , 
     path: 'likedposts',
   },
   {
     component:MyPostsComponent,
+   // canActivate : [AuthGuard] , 
     path: 'myposts',
   },
   {

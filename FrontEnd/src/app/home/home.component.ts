@@ -86,7 +86,10 @@ console.log('Error !!',error)
 
 
   logOut() {
+    console.log("loginnn func")
    localStorage.removeItem('token') ; 
+
+  // console.log('remove toke',localStorage.getItem('token') );
    this.router.navigate(['/login'])
   }
 
