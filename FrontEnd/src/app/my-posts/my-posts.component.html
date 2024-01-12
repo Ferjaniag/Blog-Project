@@ -15,7 +15,7 @@
     <div class="main-content">
         <div class="top-bar">
             <div class="profile-info">
-                <h3> Welcome Jiu</h3>
+                <h3> Welcome {{fullNameUser}}</h3>
             </div>
             <div class="notifications">
                 <i class="fas fa-bell" style="color: #6F42C1;"></i>
@@ -27,12 +27,12 @@
         </div>
         <div class="featured-posts">
 
-            <div class="thread-post">
+            <div class="thread-post" *ngFor="let tweet of tweets">
                 
                 <div class="user-info">
                     <div class="top-left">
                         <img src="assets/av1.png" alt="Profile Picture" class="profile-picture">
-                        <div class="username">Jiu Kim</div>
+                        <div class="username">{{fullNameUser}}</div>
                     </div>
                     <div class="top-right">
                         <div class="post-header">
@@ -42,9 +42,12 @@
                     </div>
                 </div>
                 
-                <div class="post-content">
-                    abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQ
-                    ahjsbzahdvhgevgehzvfgzvgfvzgr
+                <div class="post-content"> 
+                    
+                    {{ tweet.tweetContent }}
+                    <div class="tags" style="color: rgb(54, 116, 202);" *ngFor="let tag of tweet.tags">
+                      #{{ tag }}
+                    </div>
                 </div>
                 
         </div>

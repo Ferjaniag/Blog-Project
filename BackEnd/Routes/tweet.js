@@ -40,6 +40,7 @@ router.post('/tweet/addTweetNF',TweetController.addTweet) ;
 router.get('/tweet/getAllTweets',TweetController.getAllTweetes);
 router.delete('/tweet/delete/:id',TweetController.deleteTweet)
 router.put('/tweet/updateTweet/:id',TweetController.updateTweet)
+router.get('/tweet/tweets/:idUser',TweetController.getTweetsByIDUser)
 
 
 module.exports=router 

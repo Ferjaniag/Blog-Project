@@ -1,4 +1,5 @@
 const Tweet=require('../Models/tweet') 
+const User=require('../Models/user');
 
 const Comment=require('../Models/comment')
 
@@ -101,4 +102,20 @@ const getAllTweetes = (async (req,res)=>{
 })
 
 
-module.exports = {deleteTweet,addComment,updateTweet,addTweet,getAllTweetes}
+const getTweetsByIDUser = (async (req,res)=>{
+
+  try {
+    const result = await Tweet.find({userID:req.params.idUser});
+    res.status(200).send({ success: true, Tweets: result });
+  } catch (error) {
+    res.status(500).send({sucess:"false",message:error})
+  }
+ 
+
+
+})
+
+
+
+
+module.exports = {deleteTweet,addComment,updateTweet,addTweet,getAllTweetes,getTweetsByIDUser}
