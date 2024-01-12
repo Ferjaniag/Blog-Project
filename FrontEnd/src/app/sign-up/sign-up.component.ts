@@ -52,7 +52,7 @@ console.log("ERROR",error)
     this.signupForm = this.formBuilder.group({
       firstName:['', Validators.required],
       lastName:['', Validators.required],
-      emailName:['', Validators.required],
+      email:['', Validators.required],
       password:['', Validators.required],
       bio:['', Validators.required],
       profile_picture:['', Validators.required],

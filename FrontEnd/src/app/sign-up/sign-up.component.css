@@ -106,3 +106,8 @@ a:hover {
 #inputpic{
     margin-top: 15%;
 }
+
+.error-message{
+    font-size: 10px;
+    color: red;
+}
