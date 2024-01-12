@@ -16,7 +16,6 @@
         <div class="top-bar">
             <div class="profile-info">
                 <h3> Welcome {{fullNameUser}}</h3>
-                <h2>welcome again</h2>
             </div>
             <div class="notifications">
                 <i class="fas fa-bell" style="color: #6F42C1;"></i>
@@ -37,16 +36,16 @@
             
                 <div class="user-info">
                     <img src="assets/av1.png" alt="Profile Picture" class="profile-picture">
-                <div class="username">{{fullNameUser}}</div>
+                <div class="username" > {{ tweet.userID }}</div>
                 </div>
                 <div class="post-content">
-                    {{ tweet.tweetContent }}
-                  <div class="tags" style="color: rgb(54, 116, 202);" *ngFor="let tag of tweet.tags">
+                    {{ tweet.tweetContent }} <div class="tags" style="color: rgb(54, 116, 202);" *ngFor="let tag of tweet.tags">
                     #{{ tag }}
                   </div>
+                 
                 </div>
                 <div class="actions">
-                    <button class="like-button">Like  <span> 1 </span></button> 
+                    <button class="like-button" >Like  <span> 1 </span></button> 
                     <button class="comment-button">Comment</button>
                 </div>
 

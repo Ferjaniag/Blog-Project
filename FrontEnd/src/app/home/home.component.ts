@@ -14,6 +14,8 @@ export class HomeComponent implements OnInit {
   tags: string[] = [];
   tweets : any = [] ; 
   fullNameUser =' '
+
+  fullNameUserPost=''
   
   tweetContent: string = '';
 userConnected = ''
@@ -71,6 +73,15 @@ userConnected = ''
   
   }
 
+  getUserById(id:any) : any{
+this.authService.getUserByID(id).subscribe(response=> {
+console.log("User data",response)
+return (response as any).message ;
+},error => {
+
+})
+  }
+
   getAllTweets() {
 
     this.tweetService.getAllTweets().subscribe(response => {
@@ -81,7 +92,7 @@ userConnected = ''
     }, error => {
 console.log('Error !!',error)
     })
-
+   
   }
 
 

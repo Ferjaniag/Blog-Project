@@ -44,6 +44,10 @@ export class AuthService {
     }
   }
 
+  getUserByID(id:any) {
+    return this.http.get(this.url+'getUser/'+id) ;
+  }
+
 
 
 }
