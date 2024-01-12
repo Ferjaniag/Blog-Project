@@ -16,6 +16,7 @@ import { MyPostsComponent } from './my-posts/my-posts.component';
 import { LikedPostsComponent } from './liked-posts/liked-posts.component';
 import { TestComponent } from './test/test.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -27,14 +28,17 @@ import { ReactiveFormsModule } from '@angular/forms';
     ProfileComponent,
     MyPostsComponent,
     LikedPostsComponent,
-    TestComponent
+    TestComponent,
+    ConfirmDeleteComponent,
+    EditTweetComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

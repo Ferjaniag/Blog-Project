@@ -1,0 +1,17 @@
+<h1 mat-dialog-title>Update your tweet </h1>
+<div mat-dialog-content>
+    <div class="post-box" >
+<textarea   placeholder="Your post here"> {{data.Tweet.tweetContent}}
+</textarea>
+
+<div *ngFor="let tag of data.Tweet.tags">
+<input type="text" style="color: rgb(54, 116, 202); border:none" value="#{{tag}}">
+</div>
+ 
+         </div>
+
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>No</button>
+  <button color="warn" mat-button mat-dialog-close cdkFocusInitial>Update</button>
+</div>

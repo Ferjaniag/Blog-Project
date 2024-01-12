@@ -15,6 +15,11 @@ export class TweetService {
     
   }
 
+  getTweetByIDUser(idUser:any) {
+    return this.http.get(this.url+'tweet/tweets/'+idUser)
+
+  }
+
 
   createTweet(tweet : any) 
   {
