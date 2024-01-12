@@ -19,6 +19,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ConfirmDeleteComponent } from './Dialogs/confirm-delete/confirm-delete.component';
 import { EditTweetComponent } from './Dialogs/edit-tweet/edit-tweet.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import {MatButtonModule} from '@angular/material/button';
+
 
 @NgModule({
   declarations: [
@@ -40,7 +43,9 @@ import { EditTweetComponent } from './Dialogs/edit-tweet/edit-tweet.component';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatDialogModule, 
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

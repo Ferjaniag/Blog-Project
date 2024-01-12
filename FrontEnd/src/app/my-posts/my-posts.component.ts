@@ -23,6 +23,7 @@ export class MyPostsComponent implements OnInit {
     , private dialog:MatDialog){}
 
   ngOnInit(): void {
+    console.log("hi i'm in myposts")
     this.getUserPosts();
     this.userConnected=this.authService.getUserDataFromToken(); 
     console.log('user conn ',this.userConnected)
@@ -47,9 +48,7 @@ console.log('Error !!',error)
 
 
 
-  updateTweet() {
-
-  }
+  
 
 
   changeVariableUpdate(id:any){
