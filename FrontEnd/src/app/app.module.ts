@@ -17,6 +17,8 @@ import { LikedPostsComponent } from './liked-posts/liked-posts.component';
 import { TestComponent } from './test/test.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ConfirmDeleteComponent } from './Dialogs/confirm-delete/confirm-delete.component';
+import { EditTweetComponent } from './Dialogs/edit-tweet/edit-tweet.component';
 
 @NgModule({
   declarations: [
