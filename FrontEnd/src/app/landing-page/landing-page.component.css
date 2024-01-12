@@ -10,7 +10,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        height: 1000px;
+        height: auto;
         border-radius: 15px;
         flex: 6;
         
@@ -67,3 +67,266 @@
     
 
 }
+
+/********************************/
+.logo{
+    margin-top: -3%;
+}
+
+/**************/
+
+/** intro section */
+.intro-section {
+    display: flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    gap: 150px;
+    margin-bottom: 80px;
+    
+  }
+  
+  .intro-content {
+    padding-top: 100px;
+     margin-left: 50px;  
+   
+
+  }
+  
+  .intro-content h1 {
+    font-size: 50px;
+    margin-bottom: 30px;
+  }
+  .intro-content p {
+    font-size: 20px;
+    margin-bottom: 20px;
+
+  }
+.intro-pic {
+    
+  } 
+
+  button {
+    background-color: #BA68C8;
+    color: rgb(255, 255, 255);
+    border-radius: 20px;
+    font-size: 17px;
+    font-weight: 600;
+    padding: 1em 5em;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid black;
+    box-shadow: 0 0 0 0 black;
+  }
+  
+  button:hover {
+    transform: translateY(-4px) translateX(-2px);
+    box-shadow: 2px 5px 0 0 black;
+  };
+  
+  button:active {
+    transform: translateY(2px) translateX(1px);
+    box-shadow: 0 0 0 0 black;
+  };
+
+  /***************************/
+  /*** discover section */
+
+.discover-section{
+    display: flex;
+}
+
+  .discover-section h2 {
+    font-size: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+
+  }
+
+  .discover-section p {
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+
+  }
+
+  .cards-container {
+   
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 70px;
+    margin-top: 50px;
+  }
+.card{
+  
+  width: 230px;
+  background: #dcd2f8;
+  padding: 1rem;
+  border-radius: 1rem;
+  border: 0.5vmin solid #05060f;
+  box-shadow: 0.4rem 0.4rem #BA68C8;
+  overflow: hidden;
+  color: black;
+}
+
+.card h4{
+    display: flex;
+    text-align: center;
+    padding-top: 10px;
+    color: #05060f;
+    font-size: 1.4rem;
+    /* line-height: 1.25; */
+    font-weight: 700;
+}
+
+.card p{
+    
+    text-align: center;
+    padding-top: 10px;
+    color: #05060f;
+    font-size: 1rem;
+    line-height: 1.25;
+}
+
+.card:hover{
+    box-shadow: 0.4rem 0.4rem #000000;
+
+}
+
+/****************************/
+/*** services section **/
+
+.services {
+    display: flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    gap: 150px;
+    margin-bottom: 80px;
+    
+  }
+  
+  .services-content {
+    padding-top: 150px;
+     margin-left: 50px;  
+  }
+
+  .services-content h2{
+    font-size: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .services-content p {
+    margin-bottom: 20px;
+  }
+  
+  .services-content p i {
+    margin-right: 15px;
+    color: #e09e18;
+  }
+
+  /*****************************/
+
+  /*** more section **/
+  .more{
+    display: flex;
+    flex-direction: row;
+    gap: 150px;
+  }
+
+  .more h2{
+    padding-top: 50px;
+    font-size: 23px;
+  }
+
+    /*****************************/
+
+  /*** nano section **/
+  .nano-icons{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: row;
+    gap: 300px;
+  }
+
+  .nano-icons i {
+    font-size: 30px;
+    padding-left: 20px;
+  }
+
+  .nano-icons h2{
+    padding-top: 50px;
+    font-size: 23px;
+  }
+
+  #global{
+    color: #732afc;
+  }
+
+  #secure{
+    color: #fcd52a;
+  }
+
+  #post{
+    color: #d52afc;
+  }
+
+    /*****************************/
+
+  /*** pricing section **/
+
+  .pricing{
+    display: flex;
+    flex-direction: column;
+    margin-top: 150px;
+    align-items: center;
+}
+
+  .pricing h1 {
+    font-size: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+    margin-top: 30px;
+
+  }
+
+  .card h3{
+    text-align: center;
+    padding-top: 10px;
+    color: #05060f;
+    font-size: 1.4rem;
+    line-height: 1.25;
+    font-weight: 700;
+}
+
+.pricing p {
+    font-size: 20px;
+    margin-bottom: 20px;
+
+  }
+
+  .about-us{
+    display: flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    gap: 150px;
+    margin-bottom: 80px;
+    margin-top: 150px;
+  }
+
+  .about-content{
+    padding-top: 150px;
+     margin-left: 50px; 
+
+  }
+
+  .about-content h1 {
+    font-size: 50px;
+    margin-bottom: 30px;
+  }
+
+  .about-content p{
+    font-size: 20px;
+    margin-bottom: 20px;
+
+  }

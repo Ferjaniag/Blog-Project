@@ -15,6 +15,7 @@ import { AuthService } from './services/auth.service';
 import { MyPostsComponent } from './my-posts/my-posts.component';
 import { LikedPostsComponent } from './liked-posts/liked-posts.component';
 import { TestComponent } from './test/test.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { TestComponent } from './test/test.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

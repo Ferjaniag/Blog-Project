@@ -1,6 +1,6 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');*/
 .body-container {
-    background: linear-gradient( to bottom, #7F29FF, #CAA2FF, #E8D7FF, #F5EEFF);
+    background: linear-gradient( to bottom, #BA68C8, #BAA7EB, #D1AEFF, #F5EEFF);
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -48,9 +48,9 @@ input {
 
 label {
     position: absolute;
-    top: 50%;
+    top: 20%;
     left: 15px;
-    transform: translateY(-50%);
+    transform: translateY(-30%);
     color: #777;
     pointer-events: none;
     transition: 0.3s;
@@ -60,13 +60,13 @@ input:focus + label,
 input:valid + label {
     transform: translateY(-80%);
     font-size: 14px;
-    color: #7F29FF;
+    color: #BA68C8;
 }
 
 button {
     width: 100%;
     padding: 10px;
-    background-color: #CAA2FF;
+    background-color: #BA68C8;
     color: #fff;
     border: none;
     border-radius: 5px;

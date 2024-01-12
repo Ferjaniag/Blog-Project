@@ -1,33 +1,48 @@
 <div class="body-container">
     <section>
-        <form action="">
+        <form action="" [formGroup]="signupForm" (ngSubmit)="onSubmit()"> 
             <h1>Sign up</h1>
             <div class="inputbox">
-                <input [(ngModel)]="user.firstName" type="text" name="first_name" required >
+                <input  formControlName="firstName" type="text" name="first_name" >
                 <label for="first_name">First name </label>
                 <i class="fa-solid fa-user"></i>
+                <div *ngIf="submitted && signupForm.get('firstName')?.hasError('required')" class="error-message">
+                    First name is required
+                </div>
             </div>
             <div class="inputbox">
-                <input [(ngModel)]="user.lastName"type="text" name="last_name" required >
+                <input formControlName="lastName" type="text" name="last_name" required >
                 <label for="last_name">Last name </label>
                 <i class="fa-solid fa-user"></i>
+                <div *ngIf="submitted && signupForm.get('lastName')?.hasError('required')" class="error-message">
+                    Last name is required
+                </div>
             </div>
             <div class="inputbox">
-                <input [(ngModel)]="user.email" type="email" name="email" required >
+                <input formControlName="email" type="email" name="email" required >
                 <label for="email">Email </label>
                 <i class="fa-solid fa-envelope"></i>
+                <div *ngIf="submitted && signupForm.get('email')?.hasError('required')" class="error-message">
+                    Email is required
+                </div>
 
             </div>
             <div class="inputbox">
-                <input [(ngModel)]="user.bio" type="text" name="bio" required >
+                <input formControlName="bio" type="text" name="bio" required >
                 <label for="bio">Bio </label>
                 <i class="fa-solid fa-envelope"></i>
+                <div *ngIf="submitted && signupForm.get('bio')?.hasError('required')" class="error-message">
+                    Bio is required
+                </div>
 
             </div>
             <div class="inputbox">
-                <input [(ngModel)]="user.password" type="password" name="password" required>
+                <input formControlName="password" type="password" name="password" required>
                 <label for="password"> Password</label>
                 <i class="fa-solid fa-lock"></i>
+                <div *ngIf="submitted && signupForm.get('password')?.hasError('required')" class="error-message">
+                    Password is required
+                </div>
             </div>
             <div class="inputbox">
                 <input type="password" name="password_confirmed" required>
@@ -36,14 +51,17 @@
             </div>
             <div class="inputbox" id="inputpic">
                 <h4>Choose Profile picture</h4>
-                <input  (change)="select($event)" type="file" name="profile-pic" placeholder="Choose" required>
+                <input  (change)="select($event)" type="file" formControlName="profile_picture" name="profile-pic" placeholder="Choose" required>
+                <div *ngIf="submitted && signupForm.get('profile_picture')?.hasError('required')" class="error-message">
+                    picture is required
+                </div>
             </div>
             
 
-            <button (click)="register()" type="submit">Sign up</button>
+            <button type="submit">Sign up</button>
             <div class="register">
                 <p>Already have an account?</p>
-                <a href="#">Login now</a>
+                <a routerLink="/login">Login now</a>
             </div>
         </form>
     </section>
