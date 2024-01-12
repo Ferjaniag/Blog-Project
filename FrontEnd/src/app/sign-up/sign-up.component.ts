@@ -13,11 +13,13 @@ export class SignUpComponent implements OnInit  {
   signupForm!: FormGroup;
   submitted = false;
 
+
 user = {
   firstName:'',
   lastName:'',
   email:'',
   password:'', 
+  confirmedPassword:'',
   bio:''
 
 }
@@ -28,23 +30,43 @@ constructor (private formBuilder:FormBuilder, private router:Router,private auth
 select(e:any) {
   this.profile_picture=e.target.files[0]
 }
-register () {
 
-  let fd=new FormData() ;
-  fd.append('firstName',this.signupForm.get('firstName')?.value) ;
-  fd.append('lastName',this.signupForm.get('lastName')?.value) ;
-  fd.append('email',this.signupForm.get('email')?.value) ;
-  fd.append('password',this.signupForm.get('password')?.value) ;
-  fd.append('bio',this.signupForm.get('bio')?.value) ;
-  fd.append('profile_picture',this.signupForm.get('profile_picture')?.value)
+passwordsMatch() {
+  const password = this.signupForm.get('password')?.value;
+  const confirmPassword = this.signupForm.get('confirmedPassword')?.value;
+
+  return password === confirmPassword;
+  
+}
+
+register() {
+  if (!this.passwordsMatch()) {
+    alert('Passwords do not match.');
+    return;
+  }
 
 
+  let fd = new FormData();
+  fd.append('firstName', this.signupForm.get('firstName')?.value);
+  fd.append('lastName', this.signupForm.get('lastName')?.value);
+  fd.append('email', this.signupForm.get('email')?.value);
+  fd.append('password', this.signupForm.get('password')?.value);
+  fd.append('bio', this.signupForm.get('bio')?.value);
+  fd.append('profile_picture', this.profile_picture);
 
-  this.authSerivce.register(fd).subscribe(result=> {
-this.router.navigate(['/login']);
-  }, error => {
-console.log("ERROR",error)
-  })
+  this.authSerivce.register(fd).subscribe(
+    result => {
+      alert('you successfully created an account');
+      setTimeout(() => {
+        this.router.navigate(['/login']);
+      }, 1000);
+    },
+    error => {
+      console.log("ERROR", error);
+    
+
+    }
+  );
 }
 
 
@@ -54,6 +76,7 @@ console.log("ERROR",error)
       lastName:['', Validators.required],
       email:['', Validators.required],
       password:['', Validators.required],
+      confirmedPassword: ['', Validators.required],
       bio:['', Validators.required],
       profile_picture:['', Validators.required],
 
