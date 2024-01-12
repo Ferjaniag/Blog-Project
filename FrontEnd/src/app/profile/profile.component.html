@@ -2,7 +2,7 @@
 
 <div class="top-bar">
     <div class="info">
-        <h3> Welcome Jiu</h3>
+        <h3> Welcome {{data.lastName}} {{data.firstName}}</h3>
     </div>
     <div class="notifications">
         <i class="fas fa-bell" style="color: #6F42C1;"></i>
@@ -21,14 +21,15 @@
         
         <img class="profile-picture" src="assets/av1.png" alt="User Image">
     
-        <h1>User Name</h1>
+        <h1>{{data.lastName}} {{data.firstName}}</h1>
         <div class="info-container">
-            <p>Number of Posts: <span class="post-count">10</span></p>
-        <p>Followers: <span class="follower-count">100</span></p>
+            <p>Email : <span class="follower-count">{{data.email}}</span></p>
+            <p>Number of Posts: <span class="post-count">{{numberOfPosts}}</span></p>
+      
         </div>
         
         
-        <p class="bio">This is the user's bio. hello my name is , check my daily posts</p>
+        <p class="bio">{{data.bio}}</p>
     </div>
 
 </div>

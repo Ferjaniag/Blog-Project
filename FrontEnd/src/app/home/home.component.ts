@@ -90,7 +90,7 @@ console.log('Error !!',error)
    localStorage.removeItem('token') ; 
 
   // console.log('remove toke',localStorage.getItem('token') );
-   this.router.navigate(['/login'])
+   this.router.navigate(['/'])
   }
 
 
