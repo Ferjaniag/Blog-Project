@@ -33,13 +33,10 @@
 
 
             <div class="thread-post"  *ngFor="let tweet of tweets">
-                <div class="post-header">
-                    <button class="action-button" ><i class="fas fa-pencil-alt"></i></button>
-                    <button class="action-button" ><i class="fas fa-trash"></i></button>
-                  </div>
+            
                 <div class="user-info">
                     <img src="assets/av1.png" alt="Profile Picture" class="profile-picture">
-                <div class="username">Jiu Kim</div>
+                <div class="username">{{fullNameUser}}</div>
                 </div>
                 <div class="post-content">
                     {{ tweet.tweetContent }}
