@@ -77,6 +77,11 @@ const updateUserProfil = ((req, res) => {
 // Find User By ID 
 
 const findUserByID =( (req, res) => { 
+
+  User.findOne({ _id: req.params.idUser })
+  .then(result => res.status(200).json({ success:"true",message:"Successfully updated!" ,user:result}))
+  .catch((error) => res.status(404).json({msg: 'User not found' }))
+
   
 })
 
@@ -87,4 +92,4 @@ const findUserByID =( (req, res) => {
 
 
 
-module.exports={createUser,updateUserProfil,signIn}
+module.exports={createUser,updateUserProfil,signIn,findUserByID}

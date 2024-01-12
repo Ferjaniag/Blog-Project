@@ -43,6 +43,7 @@ router.post('/register',upload.any('image'),(req,res)=> {
 
 
 router.post('/signIn',userController.signIn)
+router.get('/getUser/:idUser',userController.findUserByID)
 
 
 

@@ -25,7 +25,7 @@ export class ProfileComponent implements OnInit {
   }
 
   getNumberOfPosts() {
-    this.TweetService.getTweetByIDUser( '6583596fafe24af08f39ce0f'//this.idUser
+    this.TweetService.getTweetByIDUser( this.data._id//this.idUser
     ).subscribe(response => {
       console.log('Tweets:', (response as any).Tweets);
       this.numberOfPosts=(response as any).Tweets.length
