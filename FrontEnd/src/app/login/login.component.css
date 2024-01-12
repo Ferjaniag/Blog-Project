@@ -92,3 +92,8 @@ a {
 a:hover {
     color: #D1AEFF;
 }
+
+.error-message{
+    font-size: 10px;
+    color: red;
+}

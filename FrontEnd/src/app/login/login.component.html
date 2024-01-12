@@ -1,23 +1,32 @@
 <div class="body-container">
     <section>
-        <form action="">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
             <h1>Login</h1>
             <div class="inputbox">
-                <input [(ngModel)]="user.email" type="email" name="email" required >
-                <label for="email">Email </label>
-                <i class="fa-solid fa-envelope"></i>
+              <input formControlName="email" type="email" name="email">
+              <label for="email">Email</label>
+              <i class="fa-solid fa-envelope"></i>
+              <div *ngIf="submitted && loginForm.get('email')?.hasError('required')" class="error-message">
+                Email is required
+              </div>
+              <div *ngIf="submitted && loginForm.get('email')?.hasError('email')" class="error-message">
+                Please enter a valid email address
+              </div>
             </div>
             <div class="inputbox">
-                <input [(ngModel)]="user.password" type="password" name="password" required>
-                <label for="password">Password</label>
-                <i class="fa-solid fa-lock"></i>
+              <input formControlName="password" type="password" name="password">
+              <label for="password">Password</label>
+              <i class="fa-solid fa-lock"></i>
+              <div *ngIf="submitted && loginForm.get('password')?.hasError('required')" class="error-message">
+                Password is required
+              </div>
             </div>
-            <button type="submit" (click)="login()">Log in</button>
+            <button type="submit">Login</button>
             <div class="register">
-                <p>Don't have an account?</p>
-                <a routerLink="/signup">Register now</a>
+              <p>Don't have an account?</p>
+              <a routerLink="/signup">Sign up now</a>
             </div>
-        </form>
+          </form>
     </section>
 
     
