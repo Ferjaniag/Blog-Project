@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { TweetService } from '../services/tweet.service';
 import { AuthService } from '../services/auth.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmDeleteComponent } from '../Dialogs/confirm-delete/confirm-delete.component';
+import { EditTweetComponent } from '../Dialogs/edit-tweet/edit-tweet.component';
 
 @Component({
   selector: 'app-my-posts',
@@ -16,7 +19,8 @@ export class MyPostsComponent implements OnInit {
   update:boolean = false
   tags: string[] = [];
 
-  constructor(private TweetService:TweetService,private authService:AuthService){}
+  constructor(private TweetService:TweetService,private authService:AuthService
+    , private dialog:MatDialog){}
 
   ngOnInit(): void {
     this.getUserPosts();
@@ -41,26 +45,42 @@ console.log('Error !!',error)
   }
 
 
-  deleteTweet(idTweet:any) {
-    this.TweetService.deleteTweet( idTweet
-    ).subscribe(response => {
-      console.log('Tweet Deleted:', response);
-      this.tweets= (response as any).Tweets.reverse();
-     // this.tweets=response.Tweets ;
 
-    }, error => {
-console.log('Error !!',error)
-    })
-  } 
 
   updateTweet() {
 
   }
 
 
-  changeVariableUpdate(){
+  changeVariableUpdate(id:any){
     this.update=true;
   }
   
 
-}
+  openDialogDelete(idTweet:any) {
+    
+      const dialogRef = this.dialog.open(ConfirmDeleteComponent, {
+        width: '250px',
+        data : {idTweet:idTweet}
+      })
+      dialogRef.afterClosed().subscribe(result => {
+        console.log('The dialog was closed with result:', result);
+        this.getUserPosts()
+      });
+  
+      
+    }
+
+    openDialogEdit(Tweet:any) {
+      const dialogRef = this.dialog.open(EditTweetComponent, {
+        width: '500px',
+        data : {Tweet: Tweet}
+      })
+      dialogRef.afterClosed().subscribe(result => {
+        console.log('The dialog was closed with result:', result);
+        this.getUserPosts()
+      });
+    }
+  }
+
+

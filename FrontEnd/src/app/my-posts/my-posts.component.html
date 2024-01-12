@@ -36,8 +36,8 @@
                     </div>
                     <div class="top-right">
                         <div class="post-header">
-                            <button class="action-button" id="update"><i class="fas fa-pencil-alt"></i></button>
-                            <button class="action-button" id="delete"><i class="fas fa-trash"></i></button>
+                            <button   (click)="openDialogEdit(tweet)" class="action-button" id="update"><i class="fas fa-pencil-alt"></i></button>
+                            <button (click)="openDialogDelete(tweet._id)" class="action-button" id="delete"><i class="fas fa-trash"></i></button>
                         </div>
                     </div>
                 </div>

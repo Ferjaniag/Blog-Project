@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Delete Tweet</h1>
+<div mat-dialog-content>
+  Would you like to delete this Tweet?
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>No</button>
+  <button  (click)="deleteTweet()" mat-button mat-dialog-close cdkFocusInitial color="warn" >Confirm</button>
+</div>

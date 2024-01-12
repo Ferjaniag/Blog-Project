@@ -76,12 +76,23 @@ const updateTweet = (async (req,res)=>{
 
 // Delete tweet 
 
-const deleteTweet = (async (req,res)=>{
+const deleteTweet = async (req, res) => {
+  try {
+    const result = await Tweet.deleteOne({ _id: req.params.id });
 
-   await Tweet.deleteOne({id:req.params.id}).then(res.status(200).send({sucess:"true",message:"Tweet deleted"}) )
-    .catch(res.status(500).send({sucess:"false",message:'Not Found'}))
-    
-})
+    if (result.deletedCount > 0) {
+      // Tweet was found and deleted
+      return res.status(200).send({ success: true, message: "Tweet deleted" });
+    } else {
+      // Tweet was not found
+      return res.status(404).send({ success: false, message: 'Tweet not found' });
+    }
+  } catch (error) {
+    // Handle other errors (e.g., database connection issues)
+    console.error(error);
+    return res.status(500).send({ success: false, message: 'Internal Server Error' });
+  }
+};
 
 const getAllTweetes = (async (req,res)=>{
 

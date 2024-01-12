@@ -15,6 +15,11 @@ import { AuthService } from './services/auth.service';
 import { MyPostsComponent } from './my-posts/my-posts.component';
 import { LikedPostsComponent } from './liked-posts/liked-posts.component';
 import { TestComponent } from './test/test.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ConfirmDeleteComponent } from './Dialogs/confirm-delete/confirm-delete.component';
+import { EditTweetComponent } from './Dialogs/edit-tweet/edit-tweet.component';
 
 @NgModule({
   declarations: [
@@ -26,13 +31,18 @@ import { TestComponent } from './test/test.component';
     ProfileComponent,
     MyPostsComponent,
     LikedPostsComponent,
-    TestComponent
+    TestComponent,
+    ConfirmDeleteComponent,
+    EditTweetComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatButtonModule, 
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
